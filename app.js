@@ -30,5 +30,6 @@ app.use(express.static('public'))
 
 // Routes
 app.use('/', require('./routes/index'))
+app.use('/goals', require('./routes/goals'))
 
 

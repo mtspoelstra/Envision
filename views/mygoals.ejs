@@ -42,32 +42,7 @@
 						<br>
 						<br> -->
 
-						<div class="col-6 col-12-medium">
-							<h1 class="header-font">Create New Goal</h1>
-							<section>
-								
-								<form method="POST" action="/addGoal">
-									<div class="row gtr-50">
-										<div class="col-6 col-12-small">
-											<input name="goalTitle" placeholder="Title" type="text" />
-										</div>
-										<div class="col-6 col-12-small">
-											<input name="goalBriefDes" placeholder="Breif Description" type="text" />
-										</div>
-										<div class="col-12">
-											<textarea name="goalDetailDes" placeholder="Detailed description, your WHY, all the juicy stuff"></textarea>
-										</div>
-
-										<div class="col-12">
-											<button type="submit" class="form-button-submit button">Create Goal</button>
-										</div>
-
-									
-									</div>
-								</form>
-							</section>
-						</div> 
-
+						
 
 
 
@@ -100,6 +75,8 @@
 
 
 		</div>
+
+		<%- include('./partials/footer'); %>
 
 		<!-- Scripts -->
 			<script src="/js/jquery.min.js"></script>
