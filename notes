@@ -1,7 +1,7 @@
 
 							<!-- Goals -->
 
-							<!-- <% for(let i=0; i < info.length; i++) {%>
+							 <% for(let i=0; i < info.length; i++) {%>
 								<div class="col-4 col-6-medium col-12-small" id="goal-section">
 
 								
@@ -35,4 +35,4 @@
 								</div>
 							<% } %>
 
-				 -->
+				 

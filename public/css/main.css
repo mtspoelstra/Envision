@@ -1680,6 +1680,8 @@ input, select, textarea {
 		border-radius: 4px;
 		line-height: 1.25em;
 		padding: 0.75em 1em 0.75em 1em;
+		/* padding-left: 1em !important; */
+		
 	}
 
 		form input[type="text"]:focus,
@@ -1909,7 +1911,7 @@ input, select, textarea {
 	}
 
 		#header > .container {
-			padding: 14em 0 7em 0;
+			padding: 9em 0 7em 0;
 			border-bottom: solid 2px #e5e5e5;
 			box-shadow: inset 0px -8px 0px 0px #fff, inset 0px -10px 0px 0px #e5e5e5;
 		}
@@ -2277,7 +2279,7 @@ input, select, textarea {
 		/* Header */
 
 			#header > .container {
-				padding: 12em 0 5em 0;
+				padding: 4em 0 5em 0;
 			}
 
 			#header h1 {
@@ -2718,9 +2720,24 @@ input, select, textarea {
 		margin-bottom: 3rem;
 	}
 
+	#logo{
+		margin-top: 3em;
+	}
+
 	.login-header{
 		text-align: center !important;
 		margin: 2rem 0 0 0 !important;
+	}
+
+	.header-container{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		
+	}
+
+	.header-container p{
+		margin-top: 0 !important;
 	}
 
 	.edit, .delete{
@@ -2733,6 +2750,24 @@ input, select, textarea {
 	.icon-container{
 		display: flex;
 		justify-content: flex-end;
+	}
+
+	.form-container{
+		margin: 5rem 5rem;
+	}
+
+	/* .navbar{
+		display: none;
+	} */
+
+	.fa-bars{
+		display: flex;
+		color: #ed786a !important;
+	
+	}
+
+	.sidenav-trigger{
+		border-bottom: none !important;
 	}
 
 

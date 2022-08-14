@@ -16,15 +16,7 @@ const GoalSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    status: {
-        type: String,
-        default: 'public',
-        enum: ['public', 'private']
-    },
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
-    },
+    // Add status and user
     createAt: {
         type: Date,
         default: Date.now

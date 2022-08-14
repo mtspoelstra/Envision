@@ -1,27 +1,105 @@
-<%- include('../partials/head'); %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Envision My Goals</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-<div class="col-6 col-12-medium">
-    <h1 class="header-font">Create New Goal</h1>
-    <section>
-        
-        <form method="POST" action="/addGoal">
-            <div class="row gtr-50">
-                <div class="col-6 col-12-small">
-                    <input name="goalTitle" placeholder="Title" type="text" />
-                </div>
-                <div class="col-6 col-12-small">
-                    <input name="goalBriefDes" placeholder="Breif Description" type="text" />
-                </div>
-                <div class="col-12">
-                    <textarea name="goalDetailDes" placeholder="Detailed description, your WHY, all the juicy stuff"></textarea>
-                </div>
+    
+    <!-- Font Awesome CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-                <div class="col-12">
-                    <button type="submit" class="form-button-submit button">Create Goal</button>
-                </div>
-
+	<!-- HTML5Up Template CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+</head>
+<body class="homepage is-preload">
+    <div id="page-wrapper">
+        <section id="features">
+            <div class="container">
+                <div class="form-container col-6 col-12-medium">
+                    <h1 class="header-font">Create New Goal</h1>
+                    <section>
             
+                        <form method="POST" action="/goals/addGoal">
+                            <div class="row gtr-50">
+                                <div class="col-6 col-12-small">
+                                    <input name="goalTitle" placeholder="Title" type="text" />
+                                </div>
+                                <div class="col-6 col-12-small">
+                                    <input name="goalBriefDes" placeholder="Breif Description" type="text" />
+                                </div>
+                                <div class="col-6 col-12">
+                                    <select name="status" id="status">
+                                        <option value="public" selected>Public</option>
+                                        <option value="private">Private</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <textarea name="goalDetailDes" placeholder="Detailed description, your WHY, all the juicy stuff"></textarea>
+                                </div>
+
+                                <div class="col-6 col-12-small">
+                                    <input name="goalImage" placeholder="Upload Image" type="image"/>
+                                </div>
+
+
+
+                                <div class="col-12">
+                                    <button type="submit" class="form-button-submit button">Create Goal</button>
+                                </div>
+
+                                <!-- <div class="col-12">
+                                    <a href="#" class="form-button-submit button icon solid fa-envelope">Create Goal</a>
+                                </div> -->
+                            </div>
+                        </form>
+
+                    </section>
+                </div> 
             </div>
-        </form>
-    </section>
-</div> 
+        </section>
+    </div>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -14,6 +14,16 @@
 			<!-- Header -->
 				<section id="header">
 					<div class="container">
+
+						<div class="header-container">
+							
+							<%- include('./partials/header'); %>
+							<p>Logged in as <%= name %></p>
+							<!-- <img src="<%= image %>"> -->
+							
+						</div>
+						
+						
 					
 						<!-- Logo -->
 							<h1 id="logo">Envisioning my Goals</h1>
@@ -33,7 +43,40 @@
 						<div class="row aln-center">
 						
 
-                            <!-- where goals section goes - get from notes -->
+                           
+							<!-- Goals -->
+							<% if(goals){
+								for(let i=0; i < goals.length; i++) {%>
+									<div class="col-4 col-6-medium col-12-small" id="goal-section">
+
+								
+										<section>
+											<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+										
+											<div class="icon-container">
+												<div class="col-12">
+													<a href="#" class="icon solid fa-pen edit"></a>
+												</div>
+	
+												<br>
+	
+												<div class="col-12">
+													<a href="#/" class="icon solid fa-trash delete"></a>
+												</div>
+											</div>
+										
+										
+											<header>
+												<h3><%= goals[i].goalTitle %></h3>
+											</header>
+
+											<p><%= goals[i].goalBriefDes %></p>
+										</section>
+									</div>
+								<% } 
+								}else {%>
+									<p>You have not created any goals yet</p>
+								<% } %>
 
 						</div>
 
@@ -79,6 +122,12 @@
 		<%- include('./partials/footer'); %>
 
 		<!-- Scripts -->
+
+		
+
+		
+		
+
 			<script src="/js/jquery.min.js"></script>
 			<script src="/js/jquery.dropotron.min.js"></script>
 			<script src="/js/browser.min.js"></script>
@@ -86,5 +135,12 @@
 			<script src="/js/util.js"></script>
 			<script src="/js/main.js"></script>
 
+			<script>
+				
+			
+			</script>
+
+
+			
 	</body>
 </html>
