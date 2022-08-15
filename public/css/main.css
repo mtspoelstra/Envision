@@ -1772,7 +1772,7 @@ input, select, textarea {
 		position: relative;
 		display: inline-block;
 		background: #ed786a;
-		color: #fff !important;
+		color: #fff ;
 		text-transform: uppercase;
 		border-radius: 4px;
 		border: 0;
@@ -2085,7 +2085,7 @@ input, select, textarea {
 
 /* Features */
 
-	#features {
+	.features {
 		position: relative;
 		overflow: hidden;
 		background: #fff;
@@ -2093,11 +2093,11 @@ input, select, textarea {
 		padding: 6em 0;
 	}
 
-		#features p {
+		.features p {
 			text-align: center;
 		}
 
-		#features ul.actions {
+		.features ul.actions {
 			margin-top: 1.25em;
 		}
 
@@ -2298,7 +2298,7 @@ input, select, textarea {
 
 		/* Features */
 
-			#features {
+			.features {
 				padding: 4em 0;
 			}
 
@@ -2670,11 +2670,11 @@ input, select, textarea {
 
 		/* Features */
 
-			#features {
+			.features {
 				padding: 2em 0;
 			}
 
-				#features ul.actions {
+				.features ul.actions {
 					margin-top: 0;
 				}
 
@@ -2770,10 +2770,85 @@ input, select, textarea {
 	
 	}
 
+	.below-image-container{
+		display: flex;
+		justify-content: space-between;
+		
+	}
+
+	.completion-container{
+		display: flex;
+		justify-content: space-between;
+		/* text-align: center; */
+		align-items: center;
+		
+	}
+
+	.checkbox{
+		margin-left: 1em;
+		margin-top: -2rem;
+	}
+
+	.completed-btn{
+		background-color: white !important;
+		
+		margin-top: -2rem;
+		position: relative;
+		display: inline-block;
+		background: white !important;
+		border-radius: none !important;
+		border: 0;
+		outline: 0;
+		font-size: 1em;
+		box-shadow: none !important;
+		font-weight: 600;
+		text-align: center;
+		font-size: 0.85em;
+		letter-spacing: 2px;
+		padding: 0 !important;
+		
+	}
+
+	.fa-square-check{
+		color: green;
+	}
+
+	.fa-square{
+		color: #ed786a
+	}
+
+	@media only screen and (max-width: 735px) {
+		.fa-square{
+			margin-top: -1.75rem;
+		}
+	}
+
 	.icon-container{
 		display: flex;
 		justify-content: flex-end;
 	}
+
+	.orange{
+		color: #ed786a;
+		background-color: white !important;
+	}
+
+	.green{
+		color: green;
+		background-color: white !important;
+	}
+
+	.delete-btn{
+		color: grey
+	}
+
+	a{
+		border-bottom: none !important;
+		color: grey;
+	}
+
+	
+
 
 	.form-container{
 		margin: 5rem 5rem;
@@ -2789,9 +2864,15 @@ input, select, textarea {
 	
 	}
 
+	.fa-plus{
+		background-color: #ed786a !important;
+	}
+
 	.sidenav-trigger{
 		border-bottom: none !important;
 	}
+
+
 
 
 	/* Traversy Media additions */

@@ -36,7 +36,7 @@
 				</section>
 
 			<!-- Features -->
-				<section id="features">
+				<section class="features">
 					<div class="container">
 						<header>
 							<h2>These are my goals, this is my <strong>FUTURE</strong>!</h2>
@@ -53,18 +53,66 @@
 								
 										<section>
 											<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-										
-											<div class="icon-container">
-												<div class="col-12">
-													<a href="#" class="icon solid fa-pen edit"></a>
-												</div>
-	
-												<br>
-	
-												<div class="col-12">
-													<a href="#/" class="icon solid fa-trash delete"></a>
+											
+
+
+											<div class="below-image-container">
+
+
+												<% if(goals[i].completed === false){ %>
+													<form method="POST" action="/goals/<%= goals[i]._id %>/completed">
+														<input type="hidden" name="_method" value="PUT">
+
+														<div class="completion-container">
+															<p class="orange">IN PROGRESS</p>
+															<button class="completed-btn" type="submit">
+																<a href="#/"><i class="fa-regular fa-square checkbox"></i></a>
+															</button>
+														</div>
+													</form>
+													
+												  <% } else{ %> 
+													<form method="POST" action="/goals/<%= goals[i]._id %>/notcompleted">
+														<input type="hidden" name="_method" value="PUT">
+
+														<div class="completion-container">
+															<p class="green">COMPLETED!</p>
+															<button class="completed-btn" type="submit">
+																<a href="#/"><i class="fa-regular fa-square-check checkbox"></i></a>
+															</button>
+														</div> 
+													</form>
+													
+												 <% } %>
+
+												<div class="icon-container">
+													<div class="col-12">
+														<a href="/goals/edit/<%= goals[i]._id %>" class="icon solid fa-pen edit"></a>
+													</div>
+		
+													<br>
+		
+
+													<form method="POST" action="/goals/<%= goals[i]._id %>/delete">
+														<input type="hidden" name="_method" value="DELETE">
+
+														<div>
+															
+															<button class="completed-btn delete-btn" type="submit">
+																<div class="col-12">
+																	<a href="#"><i class="icon solid fa-trash delete"></i></a>
+																</div>
+															</button>
+														</div> 
+													</form>
+
+
+
+
+													
 												</div>
 											</div>
+											
 										
 										
 											<header>

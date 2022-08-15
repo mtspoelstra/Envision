@@ -13,20 +13,21 @@
 	<link rel="stylesheet" href="/css/main.css">
 </head>
 <body class="homepage is-preload">
-    <div id="page-wrapper">
+    <div id="page-wrapper-2">
         <section class="features">
             <div class="container">
                 <div class="form-container col-6 col-12-medium">
-                    <h1 class="header-font">Create New Goal</h1>
+                    <h1 class="header-font">Edit Goal</h1>
                     <section>
             
-                        <form method="POST" action="/goals/addGoal">
+                        <form method="POST" action="/goals/<%= goal._id %>">
+                            <input type="hidden" name="_method" value="PUT">
                             <div class="row gtr-50">
                                 <div class="col-6 col-12-small">
-                                    <input name="goalTitle" placeholder="Title" type="text" />
+                                    <input name="goalTitle" value="<%= goal.goalTitle %>" type="text" />
                                 </div>
                                 <div class="col-6 col-12-small">
-                                    <input name="goalBriefDes" placeholder="Breif Description" type="text" />
+                                    <input name="goalBriefDes" value="<%= goal.goalBriefDes %>" type="text" />
                                 </div>
                                 <div class="col-6 col-12">
                                     <select name="status" id="status">
@@ -35,7 +36,7 @@
                                     </select>
                                 </div>
                                 <div class="col-12">
-                                    <textarea name="goalDetailDes" placeholder="Detailed description, your WHY, all the juicy stuff"></textarea>
+                                    <textarea name="goalDetailDes"><%= goal.goalDetailDes %></textarea>
                                 </div>
 
                                 <div class="col-6 col-12-small">
@@ -45,7 +46,7 @@
 
 
                                 <div class="col-12">
-                                    <button type="submit" class="form-button-submit button">Create Goal</button>
+                                    <button type="submit" class="form-button-submit button">Edit Goal</button>
                                 </div>
 
                                 <!-- <div class="col-12">

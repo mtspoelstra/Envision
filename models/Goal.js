@@ -25,6 +25,10 @@ const GoalSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
+    completed: {
+        type: Boolean,
+        default: false
+    },
     createAt: {
         type: Date,
         default: Date.now
