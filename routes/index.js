@@ -17,8 +17,12 @@ router.get('/', ensureGuestt, (req, res) => {
 // @route GET to /mygoals
 
 router.get('/mygoals', ensureAuthh, async (req, res) => {
+    
     try {
         const goals = await Goal.find({ user: req.user.id }).lean()
+
+        // console.log(req.user.id)
+       
         res.render('mygoals', {
             goals,
             name: req.user.firstName,

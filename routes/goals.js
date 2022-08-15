@@ -12,6 +12,28 @@ router.get('/create', ensureAuthh, (req, res) => {
     res.render('goals/create')
 })
 
+// @desc Goal Feed Page
+// @route GET to /feed
+
+router.get('/feed', ensureAuthh, async (req, res) => {
+    
+    try {
+        const goals = await Goal.find({ status: 'public' })
+            .populate('user')
+            .sort({ createAt: 'desc' })
+            .lean()
+
+            res.render('goals/feed', {
+                goals,
+                name: req.user.firstName,
+                image: req.user.image
+            })
+   } catch (error) {
+        console.error(error)
+        res.render('error/500')
+   }
+})
+
 
 // @desc process new Goal form AKA create goal
 // @route POST to /addGoal

@@ -6,10 +6,10 @@
 -->
 <html>
 	<head>
-		<%- include('./partials/head'); %>
+		<%- include('../partials/head'); %>
 	</head>
 	<body class="homepage is-preload">
-		<div id="page-wrapper">
+		<div id="page-wrapper-2">
 
 			<!-- Header -->
 				<section id="header">
@@ -17,8 +17,8 @@
 
 						
 							
-							<%- include('./partials/header'); %>
-							
+							<%- include('../partials/header'); %>
+						
 							
 							<!-- <img src="<%= image %>"> -->
 							
@@ -27,8 +27,8 @@
 						
 					
 						<!-- Logo -->
-							<h1 id="logo">Envisioning my Goals</h1>
-							<p>Creating my future</p>
+							<h1 id="logo">Goals Feed</h1>
+							<p>Create your future</p>
 
 						
 
@@ -38,9 +38,9 @@
 			<!-- Features -->
 				<section id="features">
 					<div class="container">
-						<header>
+						<!-- <header>
 							<h2>These are my goals, this is my <strong>FUTURE</strong>!</h2>
-						</header>
+						</header> -->
 						<div class="row aln-center">
 						
 
@@ -48,7 +48,7 @@
 							<!-- Goals -->
 							<% if(goals){ %>
 								<%for(let i=0; i < goals.length; i++) {%>
-									<div class="col-4 col-6-medium col-12-small" id="goal-section">
+									<div class="col-4 col-6-medium col-12-small" id="goal-section-2">
 
 								
 										<section>
@@ -120,7 +120,7 @@
 
 		</div>
 
-		<%- include('./partials/footer'); %>
+		<%- include('../partials/footer'); %>
 
 		<!-- Scripts -->
 
