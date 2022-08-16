@@ -45,7 +45,7 @@ router.get('/edit/:id', ensureAuthh, async (req, res) => {
 
 router.post('/addGoal', ensureAuthh, async (req, res) => {
     try {
-        
+        console.log(req.body)
         req.body.user = req.user.id
         await Goal.create(req.body)
         res.redirect('/mygoals')
@@ -177,6 +177,29 @@ router.get('/feed', ensureAuthh, async (req, res) => {
         console.error(error)
         res.render('error/500')
    }
+})
+
+// @desc Show Single Goal
+// @route GET to /:id
+
+router.get('/:id', ensureAuthh, async (req, res) => {
+    try {
+        let goal = await Goal.findById(req.params.id)
+            .populate('user')
+            .lean()
+
+            if(!goal) {
+                return res.render('error/404')
+            }
+
+            res.render("goals/single", {
+                goal
+            })
+   } catch (error) {
+        console.error(error)
+        res.render('error/404')
+   }
+
 })
 
 

@@ -1,38 +1,7 @@
-
-							<!-- Goals -->
-
-							 <% for(let i=0; i < info.length; i++) {%>
-								<div class="col-4 col-6-medium col-12-small" id="goal-section">
-
-								
-									<section>
-										<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-										
-										<div class="icon-container">
-											<div class="col-12">
-												<a href="#" class="icon solid fa-pen edit"></a>
-											</div>
-	
-											<br>
-	
-											<div class="col-12">
-												<a href="#/" class="icon solid fa-trash delete"></a>
-											</div>
-										</div>
-										
-										
-										<header>
-											<h3><%= info[i].goalTitle %></h3>
-										</header>
-
-										<p><%= info[i].goalBriefDes %></p>
-									</section>
-
-
-			
-
-
-								</div>
-							<% } %>
+   <!-- <div class="goal-image col-6 col-12">
+                                    <label for="goal-image">Upload an image that captures the essence of your goal</label>
+                                    <input type="file" id="goal-image" name="goal-image">
+                                    
+                                </div>
 
 				 

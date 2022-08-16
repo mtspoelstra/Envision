@@ -9,10 +9,10 @@
 		<%- include('../partials/head'); %>
 	</head>
 	<body class="homepage is-preload">
-		<div id="page-wrapper-2">
+		<div class="page-wrapper">
 
 			<!-- Header -->
-				<section id="header">
+				<section class="header">
 					<div class="container">
 
 						
@@ -27,8 +27,8 @@
 						
 					
 						<!-- Logo -->
-							<h1 id="logo">Goals Feed</h1>
-							<p>Create your future</p>
+							<h1 class="logo">Goals Feed</h1>
+							<p>Creating futures</p>
 
 						
 
@@ -36,11 +36,11 @@
 				</section>
 
 			<!-- Features -->
-				<section id="features">
+				<section class="features">
 					<div class="container">
-						<!-- <header>
-							<h2>These are my goals, this is my <strong>FUTURE</strong>!</h2>
-						</header> -->
+						<header>
+							<h2>Get<strong> inspired </strong>by browing though other people's goals </h2>
+						</header>
 						<div class="row aln-center">
 						
 
@@ -48,15 +48,15 @@
 							<!-- Goals -->
 							<% if(goals){ %>
 								<%for(let i=0; i < goals.length; i++) {%>
-									<div class="col-4 col-6-medium col-12-small" id="goal-section-2">
+									<div class="col-4 col-6-medium col-12-small" class="goal-section">
 
 								
 										<section>
-											<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+											<a href="#" class="image featured"><img src="../images/pic02.jpg" alt="" /></a>
 										
 											<div class="icon-container">
 												<div class="col-12">
-													<a href="#" class="icon solid fa-pen edit"></a>
+													<a href="/goals/edit/<%= goals[i]._id %>" class="icon solid fa-pen edit"></a>
 												</div>
 	
 												<br>
@@ -129,12 +129,12 @@
 		
 		
 
-			<script src="/js/jquery.min.js"></script>
-			<script src="/js/jquery.dropotron.min.js"></script>
-			<script src="/js/browser.min.js"></script>
-			<script src="/js/breakpoints.min.js"></script>
-			<script src="/js/util.js"></script>
-			<script src="/js/main.js"></script>
+			<script src="../../js/jquery.min.js"></script>
+			<script src="../../js/jquery.dropotron.min.js"></script>
+			<script src="../../js/browser.min.js"></script>
+			<script src="../../js/breakpoints.min.js"></script>
+			<script src="../../js/util.js"></script>
+			<script src="../../../public/js/main.js"></script>
 
 			<script>
 				

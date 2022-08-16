@@ -1,6 +1,13 @@
 const deleteButton = document.querySelectorAll('.delete')
 const editButton = document.querySelectorAll('.edit')
 
+
+document.querySelector('.test').addEventListener("click", test)
+
+function test(){
+	console.log("I've been clicked")
+}
+
 Array.from(deleteButton).forEach((element)=>{
     element.addEventListener('click', deleteGoal)
 })

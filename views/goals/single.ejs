@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<!--
+	Strongly Typed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+        <%- include('../partials/head'); %>
+	</head>
+	<body class="no-sidebar is-preload">
+		<div class="page-wrapper">
+
+			<!-- Header -->
+				<section class="header">
+					<div class="container">
+
+                        <%- include('../partials/header'); %>
+
+						<!-- Logo -->
+							<!-- <h1 class="logo"><a href="index.html">Strongly Typed</a></h1>
+							<p>A responsive HTML5 site template. Manufactured by HTML5 UP.</p> -->
+
+						
+					</div>
+				</section>
+
+			<!-- Main -->
+				<section id="main">
+					<div class="container">
+						<div id="content">
+
+							<!-- Post -->
+								<article class="box post">
+									<header>
+										<h2><%= goal.goalTitle %></h2>
+
+
+                                        <div>
+
+                                            <% if(goal.completed === false){ %>
+                                                <form method="POST" action="/goals/<%= goal._id %>/completed">
+                                                    <input type="hidden" name="_method" value="PUT">
+
+                                                    <div class="completion-container">
+                                                        <p class="orange">IN PROGRESS</p>
+                                                        <button class="completed-btn" type="submit">
+                                                            <a href="#/"><i class="fa-regular fa-square checkbox"></i></a>
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                                
+                                              <% } else{ %> 
+                                                <form method="POST" action="/goals/<%= goal._id %>/notcompleted">
+                                                    <input type="hidden" name="_method" value="PUT">
+
+                                                    <div class="completion-container">
+                                                        <p class="green">COMPLETED!</p>
+                                                        <button class="completed-btn" type="submit">
+                                                            <a href="#/"><i class="fa-regular fa-square-check checkbox"></i></a>
+                                                        </button>
+                                                    </div> 
+                                                </form>
+                                                
+                                             <% } %>
+
+                                            
+                                        </div>
+                                        
+
+
+
+
+                                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+									</header>
+									<span class="image featured"><img src="../images/pic04.jpg" alt="" /></span>
+									<h3><%= goal.goalBriefDes %></h3>
+									<p><%= goal.goalDetailDes %></p>
+								</article>
+
+						</div>
+					</div>
+				</section>
+
+			
+		</div>
+        <%- include('../partials/footer'); %>
+
+		<!-- Scripts -->
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/jquery.dropotron.min.js"></script>
+        <script src="../../js/browser.min.js"></script>
+        <script src="../../js/breakpoints.min.js"></script>
+        <script src="../../js/util.js"></script>
+        <script src="../../../public/js/main.js"></script>
+
+	</body>
+</html>
+

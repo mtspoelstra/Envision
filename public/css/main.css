@@ -65,12 +65,12 @@ input::-moz-focus-inner {
 	padding: 0;
 }
 
-input, select, textarea {
+/* input, select, textarea {
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	-ms-appearance: none;
 	appearance: none;
-}
+} */
 
 /* Basic */
 
@@ -1671,7 +1671,7 @@ input, select, textarea {
 		-webkit-transition: background-color 0.25s ease-in-out;
 		-ms-transition: background-color 0.25s ease-in-out;
 		transition: background-color 0.25s ease-in-out;
-		-webkit-appearance: none;
+		/* -webkit-appearance: none; */
 		display: block;
 		border: 0;
 		background: #e8e8e8;
@@ -1897,7 +1897,7 @@ input, select, textarea {
 
 /* Page Wrapper */
 
-	#page-wrapper > section {
+	.page-wrapper > section {
 		margin-bottom: 0;
 	}
 
@@ -1907,20 +1907,20 @@ input, select, textarea {
 
 /* Header */
 
-	#header {
+	.header {
 		position: relative;
 		position: relative;
 		background: #fff;
 		text-align: center;
 	}
 
-		#header > .container {
+		.header > .container {
 			padding: 9em 0 7em 0;
 			border-bottom: solid 2px #e5e5e5;
 			box-shadow: inset 0px -8px 0px 0px #fff, inset 0px -10px 0px 0px #e5e5e5;
 		}
 
-		#header h1 {
+		.header h1 {
 			font-family: 'Arvo';
 			font-weight: 700;
 			color: #ed786a;
@@ -1929,11 +1929,11 @@ input, select, textarea {
 			letter-spacing: 13px;
 		}
 
-			#header h1 a {
+			.header h1 a {
 				border: 0;
 			}
 
-		#header p {
+		.header p {
 			text-transform: uppercase;
 			font-weight: 400;
 			color: #888;
@@ -2282,11 +2282,11 @@ input, select, textarea {
 
 		/* Header */
 
-			#header > .container {
+			.header > .container {
 				padding: 4em 0 5em 0;
 			}
 
-			#header h1 {
+			.header h1 {
 				font-size: 2.5em;
 			}
 
@@ -2353,7 +2353,7 @@ input, select, textarea {
 
 		/* Header */
 
-			#header > .container {
+			.header > .container {
 				padding: 10em 0 7em 0;
 			}
 
@@ -2365,7 +2365,7 @@ input, select, textarea {
 
 		/* Nav */
 
-			#page-wrapper {
+			.page-wrapper {
 				-moz-backface-visibility: hidden;
 				-webkit-backface-visibility: hidden;
 				-ms-backface-visibility: hidden;
@@ -2532,7 +2532,7 @@ input, select, textarea {
 					color: #fff;
 				}
 
-			body.navPanel-visible #page-wrapper {
+			body.navPanel-visible .page-wrapper {
 				-moz-transform: translateX(275px);
 				-webkit-transform: translateX(275px);
 				-ms-transform: translateX(275px);
@@ -2635,17 +2635,17 @@ input, select, textarea {
 
 		/* Header */
 
-			#header > .container {
+			.header > .container {
 				padding: 6em 0 4em 0;
 			}
 
-			#header h1 {
+			.header h1 {
 				font-size: 2em;
 				letter-spacing: 8px;
 				line-height: 1.325em;
 			}
 
-			#header p {
+			.header p {
 				margin: 1.25em 0 0 0;
 				letter-spacing: 2px;
 			}
@@ -2743,7 +2743,7 @@ input, select, textarea {
 		margin-bottom: 3rem;
 	}
 
-	#logo{
+	.logo{
 		margin-top: 3em;
 	}
 
@@ -2854,6 +2854,15 @@ input, select, textarea {
 		margin: 5rem 5rem;
 	}
 
+	.goal-image{
+		display: flex;
+		justify-content: left;
+	}
+
+	#goal-image{
+		margin-left: 3em;
+	}
+
 	/* .navbar{
 		display: none;
 	} */
@@ -2871,6 +2880,19 @@ input, select, textarea {
 	.sidenav-trigger{
 		border-bottom: none !important;
 	}
+
+	/* .select-wrapper {
+		position: relative;
+	  }
+	  
+	  .select-wrapper::after {
+		content: "▼";
+	
+		font-size: 1rem;
+		top: .75em;
+		right: 2em;
+		position: absolute;
+	  } */
 
 
 
