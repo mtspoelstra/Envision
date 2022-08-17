@@ -8,6 +8,7 @@ const MongoStore = require('connect-mongo')(session)
 const connectDB = require("./config/db")
 const morgan = require('morgan')
 const multer = require("multer");
+const upload = require("./config/multer");
 const cloudinary = require("cloudinary").v2;
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
 
@@ -28,6 +29,20 @@ const app = express()
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
+
+
+
+
+
+
+
+
+// Testing...
+
+
+const Image = require('./models/Image')
+const Goal = require('./models/Goal')
+
 // Cloudinary Config
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
@@ -43,6 +58,70 @@ cloudinary.config({
   }
   
   });
+
+
+
+
+// Testing Goal Version
+
+
+//  End Testing Goals
+
+
+
+
+
+
+
+
+
+
+  // Testing Image version....
+  app.get('/api/images', (req, res) => {
+    res.render('form.ejs')
+})
+
+
+ 
+  app.post('/api/images', upload.single('image'), async function (req, res) {
+    
+    // console.log(req.file)
+    // console.log(req.body.title)
+    
+    try {
+      
+    const result = await cloudinary.uploader.upload(req.file.path);
+    
+    // console.log(result)
+    let image = new Image({
+        
+        title: req.body.title,
+        imageURL: result.secure_url,
+        imageId: result.asset_id
+         
+      });
+
+      
+      await image.save();
+
+      res.redirect('back')
+      
+    } catch (error) {
+      console.log(error)
+    }
+    
+
+      
+  
+})
+
+// End Testing Image
+
+
+
+
+
+
 
   
  

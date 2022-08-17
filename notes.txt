@@ -31,3 +31,20 @@ cloudinary.config({
 
 
 module.exports = configCloudinary
+
+
+
+
+    // req.body.user = req.user.id
+       
+        // let goal = new Goal({
+        
+        //     imageURL: req.file.path
+        //   });
+    
+          
+        //   await goal.save();
+
+
+
+        // await Goal.create(req.body)

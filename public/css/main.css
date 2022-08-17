@@ -2881,6 +2881,18 @@ input::-moz-focus-inner {
 		border-bottom: none !important;
 	}
 
+	/* Single Goal Page */
+	.heading-container{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: -2em;
+	}
+
+
+
+	/* Create Goal select arrow */
+
 	/* .select-wrapper {
 		position: relative;
 	  }

@@ -1,9 +1,12 @@
 const express = require('express')
 const router = express.Router()
+const dotenv = require("dotenv")
 const { ensureAuthh } = require("../middleware/auth")
-const multer = require("multer");
+const upload = require("../config/multer");
 const cloudinary = require("cloudinary").v2;
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
+
+
 
 
 const Goal = require('../models/Goal')
@@ -62,36 +65,45 @@ cloudinary.config({
     
     });
 
-const parser = multer({ storage: storage });
+// const parser = multer({ storage: storage });
 
-router.post('/addGoal', ensureAuthh, parser.single('image'), async (req, res) => {
+router.post('/addGoal', upload.single('image'), async (req, res) => {
 
+  const obj = JSON.parse(JSON.stringify(req.body)); // req.body = [Object: null prototype] { title: 'product' }
+
+  console.log(obj); // { title: 'product' }
+  // console.log(req.body)
  
+     try {
+         
+         const result = await cloudinary.uploader.upload(req.file.path);
+     
+         // console.log(result)
+         let goal = new Goal({
+             
+             imageURL: result.secure_url,
+             imageId: result.asset_id,
+             goalTitle: obj.goalTitle,
+             goalBriefDes: obj.goalBriefDes,
+             goalDetailDes: obj.goalDetailDes,
+             status: obj.status,
+             user: req.user.id
+             
+              
+           });
+     
+           
+           await goal.save();
+     
+           res.redirect('/mygoals')
+ 
+     } catch (err) {
+         console.error(err)
+         res.render('error/500')
+         
+     }
+ })
 
-    try {
-        console.log(req)
-        // req.body.user = req.user.id
-       
-        // let goal = new Goal({
-        
-        //     imageURL: req.file.path
-        //   });
-    
-          
-        //   await goal.save();
-
-
-
-        // await Goal.create(req.body)
-
-
-        res.redirect('/mygoals')
-    } catch (err) {
-        console.error(err)
-        res.render('error/500')
-        
-    }
-})
 
 // @desc Update/Edit Goal
 // @route PUT to /goals/:id
@@ -141,7 +153,7 @@ router.put('/:id/completed', ensureAuthh, async (req, res) => {
            completed: true
         })
 
-        res.redirect('/mygoals')
+        res.redirect('back')
     }
 
     } catch (error) {
@@ -170,7 +182,7 @@ router.put('/:id/notcompleted', ensureAuthh, async (req, res) => {
            completed: false
         })
 
-        res.redirect('/mygoals')
+        res.redirect('back')
     }
 
     } catch (error) {
@@ -238,6 +250,14 @@ router.get('/:id', ensureAuthh, async (req, res) => {
    }
 
 })
+
+
+
+
+
+
+// Testing cloudinary with Image
+
 
 
 

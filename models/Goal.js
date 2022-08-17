@@ -1,6 +1,14 @@
 const mongoose = require('mongoose')
 
 const GoalSchema = new mongoose.Schema({
+    imageURL: {
+        type: String,
+        trim: true
+    },
+    imageId: {
+        type: String,
+        trim: true
+    },
     goalTitle: {
         type: String,
         required: true,
@@ -9,10 +17,6 @@ const GoalSchema = new mongoose.Schema({
     goalBriefDes: {
         type: String,
         required: true,
-        trim: true
-    },
-    imageURL: {
-        type: String,
         trim: true
     },
     goalDetailDes: {
