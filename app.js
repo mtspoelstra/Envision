@@ -7,6 +7,9 @@ const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
 const connectDB = require("./config/db")
 const morgan = require('morgan')
+const multer = require("multer");
+const cloudinary = require("cloudinary").v2;
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
 
 
 
@@ -24,6 +27,25 @@ const app = express()
 // Body Parser
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
+
+// Cloudinary Config
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET
+  });
+  const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+      folder: "demo",
+      allowedFormats: ["jpg", "png"],
+      transformation: [{ width: 500, height: 500, crop: "limit" }]
+  }
+  
+  });
+
+  
+ 
 
 // Method Override
 app.use(methodOverride(function (req, res) {

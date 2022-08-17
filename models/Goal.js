@@ -11,6 +11,10 @@ const GoalSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
+    imageURL: {
+        type: String,
+        trim: true
+    },
     goalDetailDes: {
         type: String,
         required: true,

@@ -1,0 +1,33 @@
+   <!-- <div class="goal-image col-6 col-12">
+                                    <label for="goal-image">Upload an image that captures the essence of your goal</label>
+                                    <input type="file" id="goal-image" name="goal-image">
+                                    
+                                </div>
+
+				 
+
+                                const cloudinary = require("cloudinary").v2;
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
+
+
+
+const configCloudinary = () => {
+
+cloudinary.config({
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.API_KEY,
+    api_secret: process.env.API_SECRET
+    });
+    const storage = new CloudinaryStorage({
+    cloudinary: cloudinary,
+    params: {
+        folder: "demo",
+        allowedFormats: ["jpg", "png"],
+        transformation: [{ width: 500, height: 500, crop: "limit" }]
+    }
+    
+    });
+}
+
+
+module.exports = configCloudinary

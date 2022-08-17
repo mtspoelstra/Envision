@@ -25,7 +25,7 @@
                     <h1 class="header-font">Create New Goal</h1>
                     <section>
             
-                        <form method="POST" action="/goals/addGoal">
+                        <form method="POST" action="/goals/addGoal" enctype="multipart/form-data">
                             <div class="row gtr-50">
                                 <div class="col-6 col-12-small">
                                     <input name="goalTitle" placeholder="Title" type="text" />
@@ -46,8 +46,11 @@
                                     <textarea name="goalDetailDes" placeholder="Detailed description, your WHY, all the juicy stuff"></textarea>
                                 </div>
 
-                              
-
+                                <div class="goal-image col-6 col-12">
+                                    <label for="image">Upload an image that captures the essence of your goal</label>
+                                    <input type='file' name='image' id="goal-image"/>
+                                </div>
+                                
 
 
                                 <div class="col-12">
