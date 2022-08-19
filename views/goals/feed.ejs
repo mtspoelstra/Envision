@@ -54,6 +54,16 @@
 										<section>
 											<a href="/goals/<%= goals[i]._id %>" class="image featured"><img src="<%= goals[i].imageURL %>" alt="" /></a>
 										
+
+											<div class="below-image-container">
+											 
+											<div class="avatar">
+												<!-- <img src="https://lh3.googleusercontent.com/a-/AFdZucrWYNdnCTsef1dPbphDREBZlIig0g7LRbGf_SAlhw=s96-c" alt=""> -->
+												<a href="/goals/user/<%= goals[i].user._id %>"><p><%= goals[i].user.displayName %></p></a>
+											</div>
+											
+											<% if(goals[i].user._id.toString() == user._id.toString()){ %>
+							
 											<div class="icon-container">
 												<div class="col-12">
 													<a href="/goals/edit/<%= goals[i]._id %>" class="icon solid fa-pen edit"></a>
@@ -65,11 +75,19 @@
 													<a href="#/" class="icon solid fa-trash delete"></a>
 												</div>
 											</div>
+											
+											<% }
+										 	else {%>
+												<div></div>
+
+											<% } %>
+										</div>
 										
 										
 											<header>
 												<h3><%= goals[i].goalTitle %></h3>
 											</header>
+											
 
 											<p><%= goals[i].goalBriefDes %></p>
 										</section>

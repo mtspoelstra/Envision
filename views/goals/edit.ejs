@@ -16,11 +16,13 @@
     <div id="page-wrapper-2">
         <section class="features">
             <div class="container">
+
                 <div class="form-container col-6 col-12-medium">
+
                     <h1 class="header-font">Edit Goal</h1>
                     <section>
             
-                        <form method="POST" action="/goals/<%= goal._id %>">
+                        <form method="POST" action="/goals/<%= goal._id %>" enctype="multipart/form-data">
                             <input type="hidden" name="_method" value="PUT">
                             <div class="row gtr-50">
                                 <div class="col-6 col-12-small">
@@ -39,9 +41,7 @@
                                     <textarea name="goalDetailDes"><%= goal.goalDetailDes %></textarea>
                                 </div>
 
-                                <div class="col-6 col-12-small">
-                                    <input name="goalImage" placeholder="Upload Image" type="image"/>
-                                </div>
+                              
 
 
 
@@ -57,6 +57,24 @@
 
                     </section>
                 </div> 
+
+
+                <div class="form-container col-6 col-12-medium">
+                    <h1 class="header-font">Edit Image</h1>
+
+                    <form method="POST" action="/goals/image/<%= goal._id %>" enctype="multipart/form-data">
+                        <input type="hidden" name="_method" value="PUT">
+                        <div class="goal-image col-6 col-12">
+                            <label for="image">Upload an image that captures the essence of your goal</label>
+                            <input type='file' name='edit-image' id="goal-image"/>
+                        </div>
+
+                        <div class="col-12">
+                            <button type="submit" class="form-button-submit button">Upload Image</button>
+                        </div>
+                    </form>
+
+                </div>
             </div>
         </section>
     </div>

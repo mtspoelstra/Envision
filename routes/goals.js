@@ -67,7 +67,7 @@ cloudinary.config({
 
 // const parser = multer({ storage: storage });
 
-router.post('/addGoal', upload.single('image'), async (req, res) => {
+router.post('/addGoal', ensureAuthh, upload.single('image'), async (req, res) => {
 
   const obj = JSON.parse(JSON.stringify(req.body)); // req.body = [Object: null prototype] { title: 'product' }
 
@@ -105,7 +105,51 @@ router.post('/addGoal', upload.single('image'), async (req, res) => {
  })
 
 
-// @desc Update/Edit Goal
+
+
+// @desc Update/Edit Goal Image
+// @route PUT to /goals/:id
+router.post('/image/:id', ensureAuthh, upload.single('edit-image'), async (req, res) => {
+
+    
+    const obj = JSON.parse(JSON.stringify(req.body)); // req.body = [Object: null prototype] { title: 'product' }
+  
+  //   console.log(obj); 
+  
+      
+  
+      try {
+  
+          const result = await cloudinary.uploader.upload(req.file.path);
+          let goal = await Goal.findById(req.params.id).lean()
+          console.log(req.params)
+  
+      if(!goal) {
+          return res.render('error/404')
+      }
+  
+      if(goal.user != req.user.id) {
+          res.redirect('/mygoals')
+      } else {
+          goal = await Goal.findOneAndUpdate({ _id: req.params.id }, {imageURL: result.secure_url,
+              imageId: result.asset_id}, {
+              new: true,
+              runValidators: true
+          })
+  
+          res.redirect('/mygoals')
+      }
+  
+      } catch (error) {
+          console.error(error)
+          return res.render('error/500')
+      }
+  
+      
+  })
+
+
+// @desc Update/Edit Goal Body
 // @route PUT to /goals/:id
 
 router.put('/:id', ensureAuthh, async (req, res) => {
@@ -134,6 +178,9 @@ router.put('/:id', ensureAuthh, async (req, res) => {
 
     
 })
+
+
+
 
 // @desc Update Completed to True
 // @route PUT to /goals/:id/completed
@@ -217,10 +264,13 @@ router.get('/feed', ensureAuthh, async (req, res) => {
             .sort({ createAt: 'desc' })
             .lean()
 
+            console.log(req.user.image)
+
             res.render('goals/feed', {
                 goals,
-                name: req.user.firstName,
-                image: req.user.image
+                name: req.user.displayName,
+                image: req.user.image,
+                user: req.user
             })
    } catch (error) {
         console.error(error)

@@ -2889,6 +2889,12 @@ input::-moz-focus-inner {
 		margin-bottom: -2em;
 	}
 
+	/* feed page */
+	.avatar img{
+		height: 100% !important;
+		width: 100% !important;
+	}
+
 
 
 	/* Create Goal select arrow */
