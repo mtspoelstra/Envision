@@ -76,7 +76,12 @@ router.post('/addGoal', ensureAuthh, upload.single('image'), async (req, res) =>
  
      try {
          
-         const result = await cloudinary.uploader.upload(req.file.path);
+         const result = await cloudinary.uploader.upload(req.file.path, { 
+            folder: "envision", 
+            width: 2400, 
+            height: 1600,
+            crop: "fill"
+         });
      
          // console.log(result)
          let goal = new Goal({
@@ -120,7 +125,12 @@ router.post('/image/:id', ensureAuthh, upload.single('edit-image'), async (req, 
   
       try {
   
-          const result = await cloudinary.uploader.upload(req.file.path);
+          const result = await cloudinary.uploader.upload(req.file.path, { 
+            folder: "envision", 
+            width: 380, 
+            height: 250,
+            crop: "limit"
+        });
           let goal = await Goal.findById(req.params.id).lean()
           console.log(req.params)
   

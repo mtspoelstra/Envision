@@ -1496,6 +1496,7 @@ input::-moz-focus-inner {
 		.image img {
 			display: block;
 			width: 100%;
+    		object-fit: cover
 		}
 
 		.image.fit {
@@ -2763,12 +2764,26 @@ input::-moz-focus-inner {
 		margin-top: 0 !important;
 	}
 
+	.image img
+
 	.edit, .delete{
 		text-decoration: none !important;
 		margin: .5rem;
 	
 	
 	}
+
+	/* .sizing-image{
+		width: 9em !important;
+		height: 6em !important;
+	}
+
+	.image img{
+		
+		width:  100px !important;
+		height: 100px !important;
+		object-fit: cover !important;
+	} */
 
 	.below-image-container{
 		display: flex;
