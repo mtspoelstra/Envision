@@ -52,6 +52,12 @@
 
 								
 										<section class="">
+
+
+											<header class="goal-title">
+												<h3><%= goals[i].goalTitle %></h3>
+											</header>
+
 											<a href="/goals/<%= goals[i]._id %>" class="sizing-image image featured"><img src="<%= goals[i].imageURL %>" alt="" /></a>
 											
 
@@ -115,11 +121,9 @@
 											
 										
 										
-											<header>
-												<h3><%= goals[i].goalTitle %></h3>
-											</header>
+											
 
-											<p><%= goals[i].goalBriefDes %></p>
+											<p class="goal-bdes"><%= goals[i].goalBriefDes %></p>
 										</section>
 									</div>
 								<% } 

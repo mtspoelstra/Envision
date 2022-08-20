@@ -110,6 +110,36 @@ router.post('/addGoal', ensureAuthh, upload.single('image'), async (req, res) =>
  })
 
 
+ // @desc Update/Edit Goal Body
+// @route PUT to /goals/:id
+
+router.put('/:id', ensureAuthh, async (req, res) => {
+    try {
+        let goal = await Goal.findById(req.params.id).lean()
+
+    if(!goal) {
+        return res.render('error/404')
+    }
+
+    if(goal.user != req.user.id) {
+        res.redirect('/mygoals')
+    } else {
+        goal = await Goal.findOneAndUpdate({ _id: req.params.id }, req.body, {
+            new: true,
+            runValidators: true
+        })
+
+        res.redirect('/mygoals')
+    }
+
+    } catch (error) {
+        console.error(error)
+        return res.render('error/500')
+    }
+
+    
+})
+
 
 
 // @desc Update/Edit Goal Image
@@ -125,11 +155,11 @@ router.post('/image/:id', ensureAuthh, upload.single('edit-image'), async (req, 
   
       try {
   
-          const result = await cloudinary.uploader.upload(req.file.path, { 
+          const result = await cloudinary.uploader.upload(req.file.path, {  
             folder: "envision", 
-            width: 380, 
-            height: 250,
-            crop: "limit"
+            width: 2400, 
+            height: 1600,
+            crop: "fill"
         });
           let goal = await Goal.findById(req.params.id).lean()
           console.log(req.params)
@@ -159,35 +189,6 @@ router.post('/image/:id', ensureAuthh, upload.single('edit-image'), async (req, 
   })
 
 
-// @desc Update/Edit Goal Body
-// @route PUT to /goals/:id
-
-router.put('/:id', ensureAuthh, async (req, res) => {
-    try {
-        let goal = await Goal.findById(req.params.id).lean()
-
-    if(!goal) {
-        return res.render('error/404')
-    }
-
-    if(goal.user != req.user.id) {
-        res.redirect('/mygoals')
-    } else {
-        goal = await Goal.findOneAndUpdate({ _id: req.params.id }, req.body, {
-            new: true,
-            runValidators: true
-        })
-
-        res.redirect('/mygoals')
-    }
-
-    } catch (error) {
-        console.error(error)
-        return res.render('error/500')
-    }
-
-    
-})
 
 
 

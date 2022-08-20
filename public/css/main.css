@@ -242,6 +242,8 @@ input::-moz-focus-inner {
 
 		}
 
+
+
 /* Row */
 
 	.row {
@@ -2862,6 +2864,20 @@ input::-moz-focus-inner {
 		color: grey;
 	}
 
+	.goal-title{
+		margin-bottom: -1em !important;
+		margin-top: 1em;
+		text-align: left;
+	}
+
+	.goal-bdes{
+		margin-top: -1em;
+		text-align: left !important;
+		font-style: italic;
+	}
+
+
+
 	
 
 
@@ -2927,7 +2943,82 @@ input::-moz-focus-inner {
 		position: absolute;
 	  } */
 
+	  /* Single Page */
 
+	 
+	
+		/* @media screen and (max-width: 1680px) {
+	
+				.single-page {
+					width: 68em;
+				}
+	
+			} */
+
+		@media screen and (max-width: 1280px) {
+
+			.single-page {
+				width: calc(75% - 80px) !important;
+			}
+	
+		}
+	
+		@media screen and (max-width: 980px) {
+	
+			.single-page {
+				width: calc(75% - 100px) !important;
+			}
+	
+		}
+	
+		@media screen and (max-width: 736px) {
+	
+			.single-page{
+				width: calc(75% - 40px) !important;
+			}
+	
+		}
+	  
+	/* SideNav */
+
+	.sidenav {
+		height: 100%;
+		width: 250;
+		position: fixed;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		background-color: #111;
+		overflow-x: hidden;
+		transition: 0.5s;
+		padding-top: 60px;
+	}
+
+	.sidenav a {
+		padding: 8px 8px 8px 32px;
+		text-decoration: none;
+		font-size: 25px;
+		color: #818181;
+		display: block;
+		transition: 0.3s;
+	  }
+	  
+	  .sidenav a:hover {
+		color: #f1f1f1;
+	  }
+	  
+	  .sidenav .closebtn {
+		position: absolute;
+		top: 0;
+		right: 25px;
+		font-size: 36px;
+		margin-left: 50px;
+	  }
+	  
+	  @media screen and (max-height: 450px) {
+		.sidenav {padding-top: 15px;}
+		.sidenav a {font-size: 18px;}
+	  }
 
 
 	/* Traversy Media additions */
