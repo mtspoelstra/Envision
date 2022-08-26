@@ -168,6 +168,14 @@ app.use('/goals', require('./routes/goals'))
 app.use('/auth', require('./routes/auth'))
 
 
-const PORT = process.env.PORT || 1008
 
-app.listen(PORT, console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`))
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port);
+
+// const PORT = process.env.PORT || 1008
+
+// app.listen(PORT, console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`))
