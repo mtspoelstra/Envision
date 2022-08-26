@@ -78,9 +78,20 @@
 	
 												<br>
 	
-												<div class="col-12">
-													<a href="#/" class="icon solid fa-trash delete"></a>
-												</div>
+												<form method="POST" action="/goals/<%= goals[i]._id %>/delete">
+													<input type="hidden" name="_method" value="DELETE">
+
+													<div>
+														
+														<button class="completed-btn delete-btn" type="submit">
+															<div class="col-12">
+																<a href="#"><i class="icon solid fa-trash delete"></i></a>
+															</div>
+														</button>
+													</div> 
+												</form>
+
+
 											</div>
 											
 											<% }
