@@ -170,7 +170,7 @@ app.use('/auth', require('./routes/auth'))
 
 
 
-let port = process.env.PORT;
+let port = process.env.PORT || 1008;
 
 app.listen(port);
 
