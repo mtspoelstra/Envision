@@ -9,7 +9,8 @@ const { CloudinaryStorage } = require("multer-storage-cloudinary");
 
 
 
-const Goal = require('../models/Goal')
+const Goal = require('../models/Goal');
+const WorkshopSession = require('../models/WorkshopSession');
 
 
 // @desc Create Goal Page
@@ -302,8 +303,19 @@ router.get('/:id', ensureAuthh, async (req, res) => {
                 return res.render('error/404')
             }
 
+            let sessions = await WorkshopSession.find({ goal: req.params.id })
+            .populate('user')
+            .lean()
+
+            if(!goal) {
+                return res.render('error/404')
+            }
+
+
+
             res.render("goals/single", {
-                goal
+                goal,
+                sessions,
             })
    } catch (error) {
         console.error(error)

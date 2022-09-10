@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Envision My Goals</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    
+    <!-- Font Awesome CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<!-- HTML5Up Template CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+
+   
+</head>
+<body class="homepage is-preload">
+    <div class="page-wrapper">
+        <section class="features">
+            <div class="container">
+
+                <%- include('../partials/header'); %>
+
+                <div class="form-container col-6 col-12-medium">
+                    <h1 class="header-font">Workshop Session:</h1> 
+                    <br>
+                    <h2 class="header-two-font"><%= goal.goalTitle %></h2>
+
+                    <span class="image featured"><img src="<%= goal.imageURL %>" alt="" /></span>
+                    <section>
+            
+                        
+                                    
+        
+                                    <section>
+                                    <form action="/goalsessions/addSession/<%= goal._id %>" method="POST">
+                                        <div class="row gtr-50">
+        
+                                            <div class="col-6 col-12">
+                                                <label class="session" for="why">Why do I want to achieve this goal? What about it is important to me?</label>
+                                                <textarea name="why" id="why"></textarea>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <label class="session" for="life">What will my life look like when I achieve this goal? What will I feel? Paint a vivid picture.</label>
+                                                <textarea name="life" id="life"></textarea>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <label class="session" for="block">What are the biggest blocks/obstacles in pursuing/acheiving this goal?</label>
+                                                <textarea name="block" id="block"></textarea>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <label class="session" for="fear">What are my biggest fears in achieving this goal?</label>
+                                                <textarea name="fear" id="fear"></textarea>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <label class="session" for="limiting">What are the limiting thoughts, beliefs, patterns, paradigms that I currently hold that are preventing me from pursuing and/or achieving this goal?</label>
+                                                <textarea name="limiting" id="limiting"></textarea>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <label class="session" for="steps">What are the steps I need to take to achieve this goal?</label>
+                                                <textarea name="steps" id="steps"></textarea>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <label class="session" for="people">Who are the people I can reach out to for support and/or accountability in reaching this goal?</label>
+                                                <textarea name="people" id="people"></textarea>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <button type="submit" class="form-button-submit button">Submit Session</button>
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                    </section>
+                                </div>
+                          
+                                
+
+
+                               
+
+                                <!-- <div class="col-12">
+                                    <a href="#" class="form-button-submit button icon solid fa-envelope">Create Goal</a>
+                                </div> -->
+                            </div>
+                        </form>
+
+                    </section>
+                </div> 
+            </div>
+        </section>
+    </div>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

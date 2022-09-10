@@ -166,6 +166,7 @@ app.use(express.static('public'))
 app.use('/', require('./routes/index'))
 app.use('/goals', require('./routes/goals'))
 app.use('/auth', require('./routes/auth'))
+app.use('/goalsessions', require('./routes/goalsessions'))
 
 
 

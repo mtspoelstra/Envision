@@ -8,7 +8,7 @@
 	<head>
         <%- include('../partials/head'); %>
 	</head>
-	<body class="no-sidebar is-preload">
+	<body class="no-sidebar is-preload homepage">
 		<div class="page-wrapper">
 
 			<!-- Header -->
@@ -36,7 +36,7 @@
 
 										<div class="heading-container">
 
-										<h2><%= goal.goalTitle %></h2>
+										<h2 class="header-two-font"><%= goal.goalTitle %></h2>
 
 
                                         <div>
@@ -94,11 +94,63 @@
 									<span class="image featured"><img src="<%= goal.imageURL %>" alt="" /></span>
 									<h3><%= goal.goalBriefDes %></h3>
 									<p><%= goal.goalDetailDes %></p>
+
+
+
+									
 								</article>
+
+
+								<a href="/goalsessions/workshop/<%= goal._id %>"><button>Workshop My Goal</button></a>
+								<!-- <a><button>Freewrite</button></a> -->
+
+
+
+								<!-- Sessions -->
+
+								<br>
+								<br>
+								<br>
+								<br>
+
+								<h2 class="header-two-font">Past Sessions</h2>
+
+								<%for(let i=0; i < sessions.length; i++) {%>
+									<!-- <div class="sessions-container">
+										<h3><%= sessions[i].why %></h3>
+									</div> -->
+
+									<div >
+										
+										<div class="home-container">
+										  <div class="home-card"></a>
+											<a href="/goalsessions/sessions/<%= goal._id %>/<%= sessions[i]._id %>"><h1 class="home-text headingOne">Session from <%= sessions[i].createAt %></h1></a>
+											<span class="home-text1 lead">
+
+												<% if (sessions[i].whylength < 120) {%>
+													<span><%= sessions[i].why %></span>
+												<% } else{ %>
+													<span><%=sessions[i].why.substring(0,120)%>...</span>
+												<%} %>
+											  
+											</span>
+										  </div>
+										</div>
+
+									</div>
+									
+								<% } %> 
+
+							
+
+
+							
 
 						</div>
 					</div>
 				</section>
+
+			
 
 			
 		</div>
