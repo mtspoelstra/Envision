@@ -24,7 +24,28 @@
                 <div class="form-container col-6 col-12-medium">
                     <h1 class="header-font"><%= goal.goalTitle %></h1> 
                     <br>
-                    <h2 class="header-two-font">Workshop Session from </h2>
+
+
+                    <div class="below-image-container-session">
+
+                        <h2 class="header-two-font">Workshop Session from </h2>
+
+
+                        <div class="icon-container">
+                            <div class="col-12">
+                                <button class="icon-btn waves-effect waves-light btn"><a href="/goalsessions/edit/<%= goal._id %>/<%= session._id %>" class="icon solid fa-pen edit"></a></button>
+                            </div>
+
+                            <br>
+
+                            <form method="POST" action="">
+                                <input type="hidden" name="_method" value="DELETE">
+
+                                <%- include('../partials/delete_btn'); %>
+                            </form>
+                        </div>
+
+                    </div>
 
                     <span class="image featured"><img src="<%= goal.imageURL %>" alt="" /></span>
                     <section>

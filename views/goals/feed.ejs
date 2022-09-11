@@ -62,33 +62,26 @@
 											<a href="/goals/<%= goals[i]._id %>" class="sizing-image image featured"><img src="<%= goals[i].imageURL %>" alt="" /></a>
 										
 
-											<div class="below-image-container">
+										<div class="below-image-container">
 											 
 											<div class="avatar">
 												<!-- <img src="https://lh3.googleusercontent.com/a-/AFdZucrWYNdnCTsef1dPbphDREBZlIig0g7LRbGf_SAlhw=s96-c" alt=""> -->
-												<a href="/goals/user/<%= goals[i].user._id %>"><p><%= goals[i].user.displayName %></p></a>
+												<a class="avatar-name" href="/goals/user/<%= goals[i].user._id %>"><p><%= goals[i].user.displayName %></p></a>
 											</div>
 											
 											<% if(goals[i].user._id.toString() == user._id.toString()){ %>
 							
 											<div class="icon-container">
 												<div class="col-12">
-													<a href="/goals/edit/<%= goals[i]._id %>" class="icon solid fa-pen edit"></a>
+													<button class="icon-btn waves-effect waves-light btn"><a href="/goals/edit/<%= goals[i]._id %>" class="icon solid fa-pen edit"></a></button>
 												</div>
 	
 												<br>
-	
+
 												<form method="POST" action="/goals/<%= goals[i]._id %>/delete">
 													<input type="hidden" name="_method" value="DELETE">
-
-													<div>
-														
-														<button class="completed-btn delete-btn" type="submit">
-															<div class="col-12">
-																<a href="#"><i class="icon solid fa-trash delete"></i></a>
-															</div>
-														</button>
-													</div> 
+	
+													<%- include('../partials/delete_btn'); %>
 												</form>
 
 

@@ -90,32 +90,20 @@
 													</form>
 													
 												 <% } %>
-
-												<div class="icon-container">
+												 <div class="icon-container">
 													<div class="col-12">
-														<a href="/goals/edit/<%= goals[i]._id %>" class="icon solid fa-pen edit"></a>
+														<button class="icon-btn waves-effect waves-light btn"><a href="/goals/edit/<%= goals[i]._id %>" class="icon solid fa-pen edit"></a></button>
 													</div>
 		
 													<br>
-		
-
+	
 													<form method="POST" action="/goals/<%= goals[i]._id %>/delete">
 														<input type="hidden" name="_method" value="DELETE">
-
-														<div>
-															
-															<button class="completed-btn delete-btn" type="submit">
-																<div class="col-12">
-																	<a href="#"><i class="icon solid fa-trash delete"></i></a>
-																</div>
-															</button>
-														</div> 
+		
+														<%- include('partials/delete_btn'); %>
 													</form>
-
-
-
-
-													
+	
+	
 												</div>
 											</div>
 											

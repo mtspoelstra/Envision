@@ -92,7 +92,29 @@
 
 									</header>
 									<span class="image featured"><img src="<%= goal.imageURL %>" alt="" /></span>
-									<h3><%= goal.goalBriefDes %></h3>
+									
+									<div class="below-image-container">
+										<h3><%= goal.goalBriefDes %></h3>
+										
+										<div class="icon-container">
+											<div class="col-12">
+												<button class="icon-btn waves-effect waves-light btn"><a href="/goals/edit/<%= goal._id %>" class="icon solid fa-pen edit"></a></button>
+											</div>
+
+											<br>
+
+											<form method="POST" action="/goals/<%= goal._id %>/delete">
+												<input type="hidden" name="_method" value="DELETE">
+
+												<%- include('../partials/delete_btn'); %>
+											</form>
+
+
+										</div>
+									</div>
+									
+
+
 									<p><%= goal.goalDetailDes %></p>
 
 
@@ -128,15 +150,22 @@
 										
 										<div class="home-container">
 										  <div class="home-card"></a>
-											<a href="/goalsessions/sessions/<%= goal._id %>/<%= sessions[i]._id %>"><h1 class="home-text headingOne">Session from <%= sessions[i].createAt %></h1></a>
-											<span class="home-text1 lead">
+											
+											<div>
+												<a href="/goalsessions/sessions/<%= goal._id %>/<%= sessions[i]._id %>"><h1 class="home-text headingOne">Session from <%= sessions[i].createAt %></h1></a>
+											</div>
+											
+											
+											
+											<span class="below-image-container home-text1 lead">
 
 												<% if (sessions[i].whylength < 120) {%>
 													<span><%= sessions[i].why %></span>
 												<% } else{ %>
 													<span><%=sessions[i].why.substring(0,120)%>...</span>
 												<%} %>
-											  
+
+
 											</span>
 										  </div>
 										</div>

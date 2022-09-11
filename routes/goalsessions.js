@@ -49,4 +49,37 @@ router.get('/sessions/:goalId/:sessionId', ensureAuthh, async (req, res) => {
             })
 })
 
+// @desc Show Edit Session Page
+// @route GET to /edit
+
+router.get('/edit/:goalId/:sessionId', ensureAuthh, async (req, res) => {
+    try {
+        const session = await WorkshopSession.findOne({
+            _id: req.params.sessionId,
+        }).lean()
+
+        const goal = await Goal.findOne({
+            _id: req.params.goalId,
+        }).lean()
+    
+        if(!session) {
+            return res.render('error/404')
+        }
+    
+        if(session.user != req.user.id){
+            res.redirect('/mygoals')
+        } else {
+            res.render('goalsessions/edit', {
+                session,
+                goal
+            })
+        }
+    
+    } catch (error) {
+        console.error(error)
+        return res.render('error/500')
+    }
+    
+})
+
 module.exports = router
