@@ -115,6 +115,10 @@
 
 								<h2 class="header-two-font">Past Sessions</h2>
 
+								<% if (!sessions) {%>
+									<h3>You do not have any workshop sessions yet</h3>
+								<% } %>
+
 								<%for(let i=0; i < sessions.length; i++) {%>
 									<!-- <div class="sessions-container">
 										<h3><%= sessions[i].why %></h3>

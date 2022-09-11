@@ -2758,6 +2758,18 @@ input::-moz-focus-inner {
 		margin-bottom: 3rem;
 	}
 
+	.header-three-font{
+		font-family: 'Arvo';
+		font-weight: 700;
+		color: #ed786a;
+		text-shadow: 0.05em 0.075em 0 rgb(0 0 0 / 10%);
+		font-size: .75em;
+		letter-spacing: 3px;
+		text-transform: uppercase;
+		text-align: left;
+		margin-bottom: 1rem;
+	}
+
 	.logo{
 		margin-top: 3em;
 	}

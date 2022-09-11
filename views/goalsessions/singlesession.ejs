@@ -84,6 +84,22 @@
                                             </div>
                                         <% } %>
 
+                                        <% if (session.ownquestion) {%>
+                                            <div class="col-6 col-12">
+                                                <h3 class="session"><%= session.ownquestion %></h3>
+                                                <p class="session"><%= session.ownquestionresponse %></p>
+                                            </div>
+                                        <% } %>
+
+                                        <% if (session.freewrite) {%>
+                                            <div class="col-6 col-12">
+                                                <h3 class="session">Freewrite</h3>
+                                                <p class="session"><%= session.freewrite %></p>
+                                            </div>
+                                        <% } %>
+
+
+
                                         </div>
                                     </form>
                                     </section>

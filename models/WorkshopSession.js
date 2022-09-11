@@ -22,6 +22,15 @@ const WorkshopSessionSchema = new mongoose.Schema({
     people: {
         type: String,
     },
+    ownquestion: {
+        type: String,
+    },
+    ownquestionresponse: {
+        type: String,
+    },
+    freewrite: {
+        type: String,
+    },
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
